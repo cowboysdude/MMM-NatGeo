@@ -74,6 +74,13 @@ Module.register("MMM-NatGeo", {
 		
 		var NatGeo = this.NatGeo;
 
+        
+          var keys = Object.keys(this.NatGeo);
+              if (keys.length > 0) {
+            if (this.activeItem >= keys.length) {
+                this.activeItem = 0;
+           }
+           var NatGeo = this.NatGeo[keys[this.activeItem]];
 
         // The title
         var title = document.createElement("div");
@@ -103,7 +110,7 @@ Module.register("MMM-NatGeo", {
         NatGeoDescription.innerHTML = NatGeo[0].description; // the first object is NatGeo[0];
         description.appendChild(NatGeoDescription);
         wrapper.appendChild(description);
-
+				}
 		}
         return wrapper;
     },
@@ -112,6 +119,7 @@ Module.register("MMM-NatGeo", {
     processNatGeo: function(data) {
         this.today = data.Today;
         this.NatGeo = data; // NatGeo = objects
+    console.log(this.NatGeo);
         this.loaded = true;
     },
 
