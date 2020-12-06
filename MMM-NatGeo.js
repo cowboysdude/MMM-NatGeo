@@ -16,7 +16,7 @@ Module.register("MMM-NatGeo", {
         retryDelay: 2500,
         rotateInterval: 30 * 1000,   // 30 seconds
         updateInterval: 30 * 60 * 1000,
-		apiKey: ""
+	apiKey: ""
 
     },
 
@@ -54,17 +54,14 @@ Module.register("MMM-NatGeo", {
             header.classList.add("xsmall", "bright", "header");
             header.innerHTML = this.config.header;
             wrapper.appendChild(header);
-        }
+        } 
 		
-		
-	//	My data isn't rotating! Why? I dont know. I'm an idiot
-		
-		var NatGeoKeys = Object.keys(this.NatGeo);
+	var NatGeoKeys = Object.keys(this.NatGeo);
         if (NatGeoKeys.length > 0) {
             if (this.activeItem >= NatGeoKeys.length) {
                 this.activeItem = 0;
             }
-            var NatGeo = this.NatGeo[NatGeoKeys[this.activeItem]];
+         var NatGeo = this.NatGeo[NatGeoKeys[this.activeItem]];
  
 
         var top = document.createElement("div");
